@@ -20,9 +20,9 @@ class CardSwiper extends StatelessWidget {
         itemHeight: size.height*0.9,
         itemBuilder: (context, index) {
           return FadeInImage(
-            placeholder: placeholder, 
-            image: image
-          )
+            placeholder: AssetImage('assets/no-image.jpg'), 
+            image: NetworkImage('https://static.posters.cz/image/750/posters/squid-game-crowd-i120012.jpg')
+          );
         },
       )
     );
