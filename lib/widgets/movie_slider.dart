@@ -7,8 +7,7 @@ class MovieSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 350,
-      color: Colors.red,
+      height: 315,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -41,23 +40,32 @@ class _MoviePoster extends StatelessWidget {
     return Container(
       width: 130,
       height: 190,
-      color: Colors.blue,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
+
           //Cartel
-          FadeInImage(
-            placeholder: AssetImage('assets/no-image.jpg'), 
-            image: NetworkImage('https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'),
-            width: 130,
-            height: 190,
-            fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, 'details', arguments: 'movie-instance'),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: FadeInImage(
+                placeholder: AssetImage('assets/no-image.jpg'), 
+                image: NetworkImage('https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg'),
+                width: 130,
+                height: 190,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
+
+          SizedBox(height: 10),
 
           //Titulo
           Text('Interstellar',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.center,
           )
         ],
         ),
