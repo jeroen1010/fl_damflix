@@ -1,4 +1,5 @@
 
+import 'package:fl_damflix/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -14,7 +15,8 @@ class DetailsScreen extends StatelessWidget {
             delegate: SliverChildListDelegate([
               //Text('Prueba numero 1'),
               _InfoPelicula(),
-              _Overview()
+              _Overview(),
+              CastCarrousel()
             ]
             )
           )
