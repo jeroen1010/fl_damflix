@@ -8,7 +8,6 @@ class CastCarrousel extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 180,
-      color: Colors.green,
       child: ListView.builder(
         itemCount: 10,
         scrollDirection: Axis.horizontal,
@@ -29,7 +28,6 @@ class _CastCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 10),
       width: 110,
       height: 110,
-      color: Colors.red,
       child: Column(
         children: [
           ClipRRect(
@@ -37,10 +35,18 @@ class _CastCard extends StatelessWidget {
             child: FadeInImage(
               placeholder: AssetImage('assets/no-image.jpg'), 
               image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Matthew_McConaughey_2019_%2848648344772%29.jpg/250px-Matthew_McConaughey_2019_%2848648344772%29.jpg'),
-              height: 140,
+              height: 110,
               width: 100,
               fit: BoxFit.cover,
             ),
+          ),
+
+          SizedBox( height: 10,),
+
+          Text('actor.nombre Matthew McConaughey',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
           )
         ],
       ),
